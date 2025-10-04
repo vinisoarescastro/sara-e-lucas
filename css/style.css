@@ -73,7 +73,7 @@ nav a:hover {
 #home {
     height: 100vh;
     width: 100%;
-    max-width: none; /* Remove a limitação de largura */
+    max-width: none;
     margin: 0;
     padding: 0;
     
@@ -122,7 +122,7 @@ h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: var(--cor-secundaria);
-    font-weight: 400;
+    font-weight: 800;
 }
 
 /* Nossa História */
@@ -180,11 +180,9 @@ h2 {
     padding: 2rem;
     border-radius: 15px;
     backdrop-filter: blur(10px);
-    
-    /* Itens do mesmo tamanho */
-    flex: 1 1 120px; /* cresce, encolhe, tamanho base */
-    max-width: 150px; /* define largura máxima */
-    min-width: 120px; /* define largura mínima */
+    flex: 1 1 120px;
+    max-width: 150px;
+    min-width: 120px;
     box-sizing: border-box;
 }
 
@@ -227,6 +225,14 @@ h2 {
     margin: 0.5rem 0;
 }
 
+/* CORREÇÃO: Container do mapa responsivo */
+.mapa-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
 .mapa {
     width: 100%;
     height: 400px;
@@ -243,11 +249,10 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    max-width: 1200px;   /* largura máxima */
-    margin: 0 auto;      /* centraliza horizontalmente */
-    padding: 0 1rem;     /* opcional: adiciona espaço interno nas laterais */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
-
 
 .presente-card {
     background: white;
@@ -255,6 +260,9 @@ h2 {
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     text-align: center;
+    /* CORREÇÃO: Garante que não ultrapasse o container */
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .presente-card h3 {
@@ -293,6 +301,9 @@ h2 {
     padding: 1.5rem;
     border-radius: 10px;
     margin: 1.5rem 0;
+    /* CORREÇÃO: Evita overflow no mobile */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .pix-chave {
@@ -301,16 +312,17 @@ h2 {
     color: var(--cor-secundaria);
     font-weight: bold;
     margin: 1rem 0;
+    /* CORREÇÃO: Quebra texto longo em telas pequenas */
+    word-break: break-all;
 }
 
 .qrcode-placeholder {
     width: 220px;
     height: 220px;
     background-image: url('../img/qr-code-pix.png');
-    background-repeat: no-repeat;       /* não repetir a imagem */
-    background-position: center;        /* centraliza a imagem */
-    background-size: contain;           /* mantém a imagem inteira sem cortar */
-    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     border: 2px solid var(--cor-secundaria);
     margin: 1.5rem auto;
     display: flex;
@@ -318,8 +330,9 @@ h2 {
     justify-content: center;
     border-radius: 10px;
     color: var(--cor-escura);
+    /* CORREÇÃO: QR Code responsivo */
+    max-width: 100%;
 }
-
 
 /* RSVP */
 #rsvp {
@@ -374,28 +387,126 @@ h2 {
     font-size: 1.2rem;
 }
 
-/* Contato */
-.contato-info {
+/* Contato - Cards dos Noivos */
+#contato {
     text-align: center;
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
+.noivos-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.social-links a {
-    color: var(--cor-secundaria);
-    font-size: 1.2rem;
+.noivo-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 2rem;
     text-decoration: none;
-    transition: color 0.3s;
+    color: var(--cor-texto);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.social-links a:hover {
-    color: var(--cor-escura);
+.noivo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--cor-accent), var(--cor-secundaria));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.noivo-card:hover::before {
+    opacity: 0.1;
+}
+
+.noivo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.noivo-foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--cor-principal), var(--cor-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--cor-accent);
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.noivo-card:hover .noivo-foto {
+    transform: scale(1.1);
+    border-color: var(--cor-secundaria);
+}
+
+
+.lucas-foto {
+    background-image: url('../img/lucas.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.sara-foto {
+    background-image: url('../img/sara.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.noivo-card h3 {
+    font-size: 1.8rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.instagram-username {
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+}
+
+.instagram-icon {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--cor-secundaria);
+    color: white;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.noivo-card:hover .instagram-icon {
+    background: var(--cor-escura);
+    transform: scale(1.05);
 }
 
 /* Rodapé */
@@ -415,7 +526,7 @@ footer a {
     text-decoration: none;
 }
 
-/* Responsividade */
+/* Responsividade - MOBILE */
 @media (max-width: 768px) {
     #home h1 {
         font-size: 2.5rem;
@@ -438,9 +549,8 @@ footer a {
         padding: 3rem 1.5rem;
     }
 
-    #historia,
-    .evento-info,
-    .presentes-container {
+    /* CORREÇÃO: História em coluna única */
+    #historia {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
@@ -449,12 +559,47 @@ footer a {
         height: 300px;
     }
 
+    /* CORREÇÃO: Evento em coluna única */
+    .evento-info {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* CORREÇÃO: Mapa responsivo no mobile */
+    .mapa {
+        height: 300px;
+    }
+
+    /* CORREÇÃO: Presentes em coluna única */
+    .presentes-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .presente-card {
+        padding: 1.5rem;
+    }
+
+    .presente-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .pix-chave {
+        font-size: 0.9rem;
+    }
+
+    .qrcode-placeholder {
+        width: 180px;
+        height: 180px;
+    }
+
     .countdown-timer {
         gap: 1rem;
     }
 
     .countdown-item {
-        flex: 1 1 45%; /* dois por linha com espaço */
+        flex: 1 1 45%;
         max-width: none;
     }
 
@@ -464,5 +609,53 @@ footer a {
 
     .galeria-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* CORREÇÃO: Cards dos noivos responsivo */
+    .noivos-cards {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .noivo-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .noivo-foto {
+        width: 120px;
+        height: 120px;
+    }
+
+    .noivo-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .instagram-username {
+        font-size: 1rem;
+    }
+
+    /* CORREÇÃO: Botões responsivos */
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* CORREÇÃO EXTRA: Para telas muito pequenas */
+@media (max-width: 380px) {
+    .pix-chave {
+        font-size: 0.75rem;
+    }
+
+    .qrcode-placeholder {
+        width: 150px;
+        height: 150px;
+    }
+
+    .presente-card {
+        padding: 1rem;
     }
 }

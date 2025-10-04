@@ -81,8 +81,16 @@
                 <p>R. 243, nº 309 - Setor Leste Universitário</p>
                 <p>Goiânia, Goiás. </p>
             </div>
-            <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.8793808121804!2d-49.24457099999999!3d-16.6829183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef12652dfc5fd%3A0x27d7d3930a9a3bf4!2sIPSU%20-%20Igreja%20Presbiteriana%20do%20Setor%20Universit%C3%A1rio!5e0!3m2!1spt-BR!2sbr!4v1759611304292!5m2!1spt-BR!2sbr" width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- CORREÇÃO: Container responsivo para o mapa -->
+            <div class="mapa-container">
+                <iframe 
+                    class="mapa"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.8793808121804!2d-49.24457099999999!3d-16.6829183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef12652dfc5fd%3A0x27d7d3930a9a3bf4!2sIPSU%20-%20Igreja%20Presbiteriana%20do%20Setor%20Universit%C3%A1rio!5e0!3m2!1spt-BR!2sbr!4v1759611304292!5m2!1spt-BR!2sbr" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
@@ -147,14 +155,26 @@
 
     <!-- Contato -->
     <section id="contato">
-        <h2>Contato e Redes Sociais</h2>
-        <div class="contato-info">
-            <p style="font-size: 1.2rem; margin-bottom: 1rem;">Entre em contato conosco:</p>
-            <p><strong>E-mail:</strong> <a href="mailto:rabelofoscarinicasamento@gmail.com" style="color: var(--cor-secundaria);">rabelofoscarinicasamento@gmail.com</a></p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/_lucas_rabelo/" target="_blank">📱@_lucas_rabelo</a>
-                <a href="https://www.instagram.com/_sarathais_/" target="_blank">📱 @_sarathais_</a>
-            </div>
+        <h2>Siga os Noivos</h2>
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem; color: var(--cor-texto);">Acompanhe nossa jornada nas redes sociais!</p>
+        <div class="noivos-cards">
+            <a href="https://www.instagram.com/_lucas_rabelo/" target="_blank" class="noivo-card">
+                <div class="noivo-foto lucas-foto">
+                    <!-- <span style="font-size: 4rem;">👨</span> -->
+                </div>
+                <h3>Lucas Rabelo</h3>
+                <p class="instagram-username">@_lucas_rabelo</p>
+                <div class="instagram-icon">📱 Instagram</div>
+            </a>
+            
+            <a href="https://www.instagram.com/_sarathais_/" target="_blank" class="noivo-card">
+                <div class="noivo-foto sara-foto">
+                    <!-- <span style="font-size: 4rem;">👩</span> -->
+                </div>
+                <h3>Sara Thaís</h3>
+                <p class="instagram-username">@_sarathais_</p>
+                <div class="instagram-icon">📱 Instagram</div>
+            </a>
         </div>
     </section>
 

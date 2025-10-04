@@ -91,26 +91,27 @@ nav a:hover {
     align-items: center;
     text-align: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #home h1 {
     font-size: 4rem;
-    margin-bottom: 1rem;
     font-weight: 400;
     letter-spacing: 3px;
     font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 30px rgba(0, 0, 0);
 }
 
 #home p {
     font-size: 1.5rem;
     font-style: italic;
+    text-shadow: 2px 2px 30px rgba(0, 0, 0);
 }
 
 /* Indicador de Scroll - Animação de dedo */
 .scroll-indicator {
     position: absolute;
-    bottom: 60px; /* Aumentado para ficar mais acima */
+    bottom: 40px; /* Aumentado para ficar mais acima */
     left: 50%;
     transform: translateX(-50%);
     display: none; /* Escondido por padrão */
@@ -127,7 +128,7 @@ nav a:hover {
 }
 
 .hand-emoji {
-    font-size: 3rem; /* Aumentado */
+    font-size: 2rem; /* Aumentado */
     display: block;
     filter: drop-shadow(0 3px 6px rgba(0,0,0,0.5));
     transform: rotate(0deg); /* Garantir rotação */
@@ -139,7 +140,6 @@ nav a:hover {
     text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     font-weight: 600;
     letter-spacing: 1.5px;
-    text-transform: uppercase;
 }
 
 /* Animação de deslizar para cima */

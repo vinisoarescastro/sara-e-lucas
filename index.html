@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara & Lucas - Nosso Casamento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#historia">Nossa História</a></li>
+            <li><a href="#countdown">Contagem</a></li>
+            <li><a href="#evento">Evento</a></li>
+            <li><a href="#presentes">Presentes</a></li>
+            <li><a href="#rsvp">Confirmar Presença</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <section id="home">
+        <h1>Sara & Lucas</h1>
+        <p>Celebrando nosso amor</p>
+    </section>
+
+    <!-- Nossa História -->
+    <section id="historia">
+        <div class="historia-texto">
+            <h2>Nossa História</h2>
+            <p>Querido amigos e familiares... Entre tons alaranjados dos dias mais ordinários, Deus tem nos abençoado com pequenos lampejos de uma graça extraordinária… Eis que tão docemente nos encontrou o amor e não houveram milhas suficientes para distanciar a intensidade daquilo que, com a graça de Deus, será pra sempre....</p>
+            <br>
+            <p>Temos por certo que o que há de bom e mais valioso em nós é mesmo o próprio Cristo. Será Ele o vinculo da perfeição que unirá nossos corações um ao outro. Esta união é resposta de uma oração antiga… um privilégio daqueles que o coração já reconhece antes mesmo de compreender plenamente!</p>
+            <br>
+            <p>E bendita seja a noite que nossos corações descobriram que se amavam… Ele se apaixonou desde o primeiro sorriso dela... ela foi se apaixonando desde a primeira vez que ele a fez sorrir... Até aqui foram inda, vindas e cartas aos montes.... mas permanecemos com as lágrimas mais saudosas e os sorrisos mais sinceros já vistos deste lado do universo!</p>
+        </div>
+        <div class="historia-foto"></div>
+    </section>
+
+    <!-- Contagem Regressiva -->
+    <section id="countdown">
+        <h2>Contagem Regressiva</h2>
+        <div class="countdown-timer">
+            <div class="countdown-item">
+                <span id="dias">00</span>
+                <p>Dias</p>
+            </div>
+            <div class="countdown-item">
+                <span id="horas">00</span>
+                <p>Horas</p>
+            </div>
+            <div class="countdown-item">
+                <span id="minutos">00</span>
+                <p>Minutos</p>
+            </div>
+            <div class="countdown-item">
+                <span id="segundos">00</span>
+                <p>Segundos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informações do Evento -->
+    <section id="evento">
+        <h2>Informações do Evento</h2>
+        <div class="evento-info">
+            <div class="info-card">
+                <h3>📅 Data e Horário</h3>
+                <p><strong>Data:</strong> 10 de Janeiro de 2026</p>
+                <p><strong>Horário:</strong> 17h30</p>
+                <br>
+                <h3>📍 Local</h3>
+                <p>IPSU - Igreja Presbiteriana do Setor Universitário</p>
+                <p>R. 243, nº 309 - Setor Leste Universitário</p>
+                <p>Goiânia, Goiás. </p>
+            </div>
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.8793808121804!2d-49.24457099999999!3d-16.6829183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef12652dfc5fd%3A0x27d7d3930a9a3bf4!2sIPSU%20-%20Igreja%20Presbiteriana%20do%20Setor%20Universit%C3%A1rio!5e0!3m2!1spt-BR!2sbr!4v1759611304292!5m2!1spt-BR!2sbr" width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presentes e Doações -->
+    <section id="presentes">
+        <h2>Presentes e Doações</h2>
+        <div class="presentes-container">
+            <div class="presente-card">
+                <h3>🎁 Lista de Presentes</h3>
+                <p>Sua presença é nosso maior presente! Mas se desejar nos presentear, preparamos uma lista especial.</p>
+                <a href="https://loja.infinitepay.io/lucas-rabelo-foscarini" target="_blank" class="btn">Ver Lista de Presentes</a>
+            </div>
+            <div class="presente-card">
+                <h3>💝 Doações via PIX</h3>
+                <p>Se preferir, você também pode contribuir via PIX:</p>
+                <div class="pix-info">
+                    <p><strong>Chave PIX:</strong></p>
+                    <p class="pix-chave">rabelofoscarinicasamento@gmail.com</p>
+                    <button class="btn" onclick="copiarPix()">Copiar Chave PIX</button>
+                </div>
+                <div class="qrcode-placeholder">
+                    <p>QR Code PIX<br>(adicionar imagem)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp">
+        <h2>Confirmar Presença</h2>
+        <p>Sua presença é muito importante para nós!</p>
+        <p>Por favor, confirme até 15 de dezembro de 2025</p>
+        <a href="#" class="btn" style="background: white; color: var(--cor-secundaria);">Confirmar Presença</a>
+        <p style="margin-top: 1rem; font-size: 0.9rem; font-style: italic;">(Link do formulário será adicionado em breve)</p>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria">
+        <h2>Galeria de Fotos</h2>
+        <div class="galeria-grid">
+            <div class="galeria-item foto-placeholder">
+                <img src="./img/img1.jpg" alt="#">
+            </div>
+            <div class="galeria-item foto-placeholder">
+                <img src="./img/img8.jpg" alt="#">
+            </div>
+            <div class="galeria-item foto-placeholder">
+                <img src="./img/img3.jpg" alt="#">
+            </div>
+            <div class="galeria-item foto-placeholder">
+                <img src="./img/img4.jpg" alt="#">
+            </div>
+            <div class="galeria-item foto-placeholder">
+                <img src="./img/img5.jpg" alt="#">
+            </div>
+            <div class="galeria-item foto-placeholder">
+                <img src="./img/img6.jpg" alt="#">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <h2>Contato e Redes Sociais</h2>
+        <div class="contato-info">
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">Entre em contato conosco:</p>
+            <p><strong>E-mail:</strong> <a href="mailto:rabelofoscarinicasamento@gmail.com" style="color: var(--cor-secundaria);">rabelofoscarinicasamento@gmail.com</a></p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/_lucas_rabelo/" target="_blank">📱@_lucas_rabelo</a>
+                <a href="https://www.instagram.com/_sarathais_/" target="_blank">📱 @_sarathais_</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Sara & Lucas - Todos os direitos reservados</p>
+        <p>Desenvolvido por <a href="mailto:vinisoarescastro@gmail.com">Vinicius Soares</a></p>
+    </footer>
+
+</body>
+</html>

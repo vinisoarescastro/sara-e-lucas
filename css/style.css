@@ -1,0 +1,463 @@
+/* Reset e box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis de cores */
+:root {
+    --cor-principal: #2B2525;
+    --cor-secundaria: #8B7F73;
+    --cor-accent: #D4C5B5;
+    --cor-texto: #4A4A4A;
+    --cor-clara: #F5F3F0;
+    --cor-escura: #5D5550;
+}
+
+/* HTML e body */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* previne scroll horizontal */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* Menu Fixo */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 1rem 0;
+    display: none;
+}
+
+@media (min-width: 769px) {
+    nav {
+        display: block;
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Seção Home */
+#home {
+    height: 100vh;
+    width: 100%;
+    max-width: none; /* Remove a limitação de largura */
+    margin: 0;
+    padding: 0;
+    
+    background-image: 
+        linear-gradient(rgba(244, 194, 194, 0.3), rgba(212, 165, 165, 0.3)),
+        url('../img/img3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#home h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-family: 'Playfair Display', serif;
+}
+
+#home p {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+/* Seções Gerais */
+section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section:nth-child(even) {
+    background: var(--cor-clara);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--cor-secundaria);
+    font-weight: 400;
+}
+
+/* Nossa História */
+#historia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.historia-texto {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.historia-foto {
+    width: 100%;
+    height: 500px;
+    background: url('../img/img9.jpg') center/cover no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+@media (min-width: 769px) {
+    .historia-foto {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* Contagem Regressiva */
+#countdown {
+    max-width: none;
+    text-align: center;
+    background: linear-gradient(135deg, var(--cor-principal), var(--cor-accent));
+    color: white;
+    padding: 4rem 2rem;
+}
+
+#countdown h2 {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    
+    /* Itens do mesmo tamanho */
+    flex: 1 1 120px; /* cresce, encolhe, tamanho base */
+    max-width: 150px; /* define largura máxima */
+    min-width: 120px; /* define largura mínima */
+    box-sizing: border-box;
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.countdown-item p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Evento */
+.evento-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.info-card p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.mapa {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Presentes */
+#presentes {
+    max-width: none;
+}
+
+.presentes-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;   /* largura máxima */
+    margin: 0 auto;      /* centraliza horizontalmente */
+    padding: 0 1rem;     /* opcional: adiciona espaço interno nas laterais */
+}
+
+
+.presente-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.presente-card h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.presente-card p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--cor-secundaria);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background: var(--cor-escura);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.pix-info {
+    background: var(--cor-clara);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+.pix-chave {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.qrcode-placeholder {
+    width: 200px;
+    height: 200px;
+    background: #f0f0f0;
+    border: 2px dashed var(--cor-secundaria);
+    margin: 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: var(--cor-escura);
+}
+
+/* RSVP */
+#rsvp {
+    max-width: none;
+    text-align: center;
+    background: linear-gradient(135deg, var(--cor-accent), var(--cor-principal));
+    color: white;
+}
+
+#rsvp h2 {
+    color: white;
+}
+
+#rsvp p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Galeria */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.galeria-item {
+    height: 300px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Placeholder para fotos */
+.foto-placeholder {
+    background: linear-gradient(135deg, var(--cor-principal), var(--cor-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Contato */
+.contato-info {
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: var(--cor-secundaria);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--cor-escura);
+}
+
+/* Rodapé */
+footer {
+    background: var(--cor-texto);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: var(--cor-accent);
+    text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2.5rem;
+    }
+
+    #home p {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        gap: 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 3rem 1.5rem;
+    }
+
+    #historia,
+    .evento-info,
+    .presentes-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .historia-foto {
+        height: 300px;
+    }
+
+    .countdown-timer {
+        gap: 1rem;
+    }
+
+    .countdown-item {
+        flex: 1 1 45%; /* dois por linha com espaço */
+        max-width: none;
+    }
+
+    .countdown-item span {
+        font-size: 2rem;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+}

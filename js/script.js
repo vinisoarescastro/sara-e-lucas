@@ -24,11 +24,11 @@ atualizarContagem();
 
 // Copiar Chave PIX
 function copiarPix() {
-    const chave = 'pix@vscastro.com';
+    const chave = 'rabelofoscarinicasamento@gmail.com';
     navigator.clipboard.writeText(chave).then(() => {
         alert('Chave PIX copiada com sucesso!');
     }).catch(() => {
-        alert('Erro ao copiar. Chave PIX: pix@vscastro.com');
+        alert('Erro ao copiar. Chave PIX: rabelofoscarinicasamento@gmail.com');
     });
 }
 
@@ -44,4 +44,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Esconder indicador de scroll após rolar
+let scrolled = false;
+const scrollIndicator = document.querySelector('.scroll-indicator');
+
+window.addEventListener('scroll', function() {
+    if (!scrolled && window.scrollY > 50) {
+        scrolled = true;
+        if (scrollIndicator) {
+            scrollIndicator.style.opacity = '0';
+            scrollIndicator.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                scrollIndicator.style.display = 'none';
+            }, 500);
+        }
+    }
 });

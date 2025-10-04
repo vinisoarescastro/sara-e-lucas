@@ -531,7 +531,6 @@ h2 {
     border-color: var(--cor-secundaria);
 }
 
-/* Quando você tiver as fotos, use assim:
 .lucas-foto {
     background-image: url('../img/lucas.jpg');
     background-size: cover;
@@ -543,7 +542,6 @@ h2 {
     background-size: cover;
     background-position: center;
 }
-*/
 
 .noivo-card h3 {
     font-size: 1.8rem;

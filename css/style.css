@@ -7,7 +7,7 @@
 
 /* Variáveis de cores */
 :root {
-    --cor-principal: #2B2525;
+    --cor-principal: #444444;
     --cor-secundaria: #8B7F73;
     --cor-accent: #D4C5B5;
     --cor-texto: #4A4A4A;
@@ -79,7 +79,7 @@ nav a:hover {
     
     background-image: 
         linear-gradient(rgba(244, 194, 194, 0.3), rgba(212, 165, 165, 0.3)),
-        url('../img/img3.jpg');
+        url('../img/img10.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -304,10 +304,14 @@ h2 {
 }
 
 .qrcode-placeholder {
-    width: 200px;
-    height: 200px;
-    background: #f0f0f0;
-    border: 2px dashed var(--cor-secundaria);
+    width: 220px;
+    height: 220px;
+    background-image: url('../img/qr-code-pix.png');
+    background-repeat: no-repeat;       /* não repetir a imagem */
+    background-position: center;        /* centraliza a imagem */
+    background-size: contain;           /* mantém a imagem inteira sem cortar */
+    
+    border: 2px solid var(--cor-secundaria);
     margin: 1.5rem auto;
     display: flex;
     align-items: center;
@@ -315,6 +319,7 @@ h2 {
     border-radius: 10px;
     color: var(--cor-escura);
 }
+
 
 /* RSVP */
 #rsvp {

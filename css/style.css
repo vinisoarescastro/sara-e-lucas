@@ -110,15 +110,15 @@ nav a:hover {
 /* Indicador de Scroll - Animação de dedo */
 .scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 60px; /* Aumentado para ficar mais acima */
     left: 50%;
     transform: translateX(-50%);
     display: none; /* Escondido por padrão */
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
     animation: fadeInOut 2s ease-in-out infinite;
-    z-index: 10;
+    z-index: 100; /* Aumentado para ficar na frente */
 }
 
 .hand-swipe {
@@ -127,31 +127,37 @@ nav a:hover {
 }
 
 .hand-emoji {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Aumentado */
     display: block;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.5));
+    transform: rotate(0deg); /* Garantir rotação */
 }
 
 .scroll-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    font-weight: 500;
-    letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
 /* Animação de deslizar para cima */
 @keyframes swipeUp {
     0% {
-        transform: translateY(0);
+        transform: translateY(0px);
         opacity: 1;
     }
-    50% {
-        transform: translateY(-20px);
-        opacity: 0.6;
+    40% {
+        transform: translateY(-25px);
+        opacity: 0.7;
+    }
+    80% {
+        transform: translateY(-5px);
+        opacity: 0.9;
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(0px);
         opacity: 1;
     }
 }
@@ -159,7 +165,7 @@ nav a:hover {
 /* Animação de fade in/out suave */
 @keyframes fadeInOut {
     0%, 100% {
-        opacity: 0.8;
+        opacity: 0.9;
     }
     50% {
         opacity: 1;
@@ -169,7 +175,7 @@ nav a:hover {
 /* Mostrar indicador apenas no mobile */
 @media (max-width: 768px) {
     .scroll-indicator {
-        display: flex;
+        display: flex !important; /* Forçar exibição */
     }
 }
 
@@ -525,6 +531,7 @@ h2 {
     border-color: var(--cor-secundaria);
 }
 
+/* Quando você tiver as fotos, use assim:
 .lucas-foto {
     background-image: url('../img/lucas.jpg');
     background-size: cover;
@@ -536,7 +543,7 @@ h2 {
     background-size: cover;
     background-position: center;
 }
-
+*/
 
 .noivo-card h3 {
     font-size: 1.8rem;

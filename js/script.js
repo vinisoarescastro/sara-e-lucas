@@ -1,6 +1,6 @@
 // Contagem Regressiva
 function atualizarContagem() {
-    const dataEvento = new Date('2026-01-10T17:30:00').getTime();
+    const dataEvento = new Date('2026-01-10T00:00:00').getTime();
     const agora = new Date().getTime();
     const diferenca = dataEvento - agora;
 

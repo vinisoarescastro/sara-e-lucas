@@ -15,7 +15,7 @@ function atualizarContagem() {
     document.getElementById('segundos').innerText = segundos.toString().padStart(2, '0')
     
     if (diferenca < 0) {
-        document.querySelector('.countdown-timer').innerHTML = '<h3 style="color: white;">O grande dia chegou! 🎉</h3>';
+        document.querySelector('.countdown-timer').innerHTML = '<h3 style="color: white;">É HOOJEEE!!!! O grande dia chegou! 🎉</h3>';
     }
 }
 
